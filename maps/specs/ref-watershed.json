@@ -1,0 +1,443 @@
+{
+  "kicker": "Downstream \u00b7 Reference",
+  "title": "The Watershed",
+  "subtitle": "How the water carries it: Raccoon City to the Gulf of Mexico, first 31 days",
+  "base": "north-america",
+  "projection": {
+    "type": "albers",
+    "lon0": -97,
+    "lat0": 37,
+    "lat1": 29.5,
+    "lat2": 45.5
+  },
+  "extent": [
+    -110.5,
+    27.5,
+    -86.0,
+    45.5
+  ],
+  "size": [
+    1200,
+    860
+  ],
+  "bg_rivers": true,
+  "rivers": [
+    {
+      "name": "",
+      "status": "red",
+      "width": 3,
+      "points": [
+        [
+          -105.5,
+          39.84
+        ],
+        [
+          -105.28,
+          39.775
+        ],
+        [
+          -104.96,
+          39.822
+        ],
+        [
+          -104.82,
+          39.99
+        ],
+        [
+          -104.82,
+          40.22
+        ],
+        [
+          -104.6,
+          40.4
+        ],
+        [
+          -104.1,
+          40.285
+        ],
+        [
+          -103.8,
+          40.265
+        ],
+        [
+          -103.45,
+          40.43
+        ],
+        [
+          -103.19,
+          40.63
+        ],
+        [
+          -102.6,
+          40.92
+        ],
+        [
+          -102.27,
+          40.98
+        ],
+        [
+          -101.8,
+          41.05
+        ],
+        [
+          -100.75,
+          41.12
+        ]
+      ]
+    },
+    {
+      "name": "Platte",
+      "status": "red",
+      "width": 3,
+      "points": [
+        [
+          -100.75,
+          41.12
+        ],
+        [
+          -99.9,
+          40.85
+        ],
+        [
+          -99.08,
+          40.68
+        ],
+        [
+          -98.34,
+          40.88
+        ],
+        [
+          -97.37,
+          41.4
+        ],
+        [
+          -96.5,
+          41.42
+        ],
+        [
+          -96.1,
+          41.1
+        ],
+        [
+          -95.88,
+          41.02
+        ]
+      ],
+      "label": {
+        "at": [
+          -98.6,
+          41.12
+        ],
+        "rotate": -6
+      }
+    },
+    {
+      "name": "Missouri",
+      "status": "red",
+      "width": 3,
+      "points": [
+        [
+          -95.88,
+          41.02
+        ],
+        [
+          -95.86,
+          40.68
+        ],
+        [
+          -95.2,
+          40.1
+        ],
+        [
+          -94.85,
+          39.77
+        ],
+        [
+          -94.6,
+          39.12
+        ],
+        [
+          -93.6,
+          39.2
+        ],
+        [
+          -92.8,
+          38.95
+        ],
+        [
+          -92.17,
+          38.58
+        ],
+        [
+          -91.44,
+          38.7
+        ],
+        [
+          -90.48,
+          38.79
+        ],
+        [
+          -90.12,
+          38.81
+        ]
+      ],
+      "label": {
+        "at": [
+          -93.3,
+          39.45
+        ],
+        "rotate": 8
+      }
+    },
+    {
+      "name": "Mississippi",
+      "status": "red",
+      "width": 3.4,
+      "points": [
+        [
+          -90.12,
+          38.81
+        ],
+        [
+          -90.18,
+          38.63
+        ],
+        [
+          -89.95,
+          38.0
+        ],
+        [
+          -89.52,
+          37.3
+        ],
+        [
+          -89.18,
+          37.0
+        ],
+        [
+          -89.55,
+          36.4
+        ],
+        [
+          -90.07,
+          35.15
+        ],
+        [
+          -90.6,
+          34.4
+        ],
+        [
+          -91.06,
+          33.4
+        ],
+        [
+          -90.9,
+          32.35
+        ],
+        [
+          -91.42,
+          31.56
+        ],
+        [
+          -91.6,
+          31.0
+        ],
+        [
+          -91.19,
+          30.45
+        ],
+        [
+          -90.6,
+          30.05
+        ],
+        [
+          -90.07,
+          29.95
+        ],
+        [
+          -89.6,
+          29.5
+        ],
+        [
+          -89.25,
+          29.15
+        ]
+      ],
+      "label": {
+        "at": [
+          -89.15,
+          34.2
+        ],
+        "rotate": -80
+      }
+    }
+  ],
+  "zones": [
+    {
+      "center": [
+        -105.5,
+        39.84
+      ],
+      "radius_km": 25,
+      "level": "hot"
+    }
+  ],
+  "places": [
+    {
+      "name": "RACCOON CITY",
+      "at": [
+        -105.5,
+        39.84
+      ],
+      "kind": "ruin",
+      "label_pos": "left",
+      "note": "Day 0 \u00b7 destroyed Day 1"
+    },
+    {
+      "name": "Denver",
+      "at": [
+        -104.99,
+        39.74
+      ],
+      "kind": "city",
+      "infected": true,
+      "label_pos": "below",
+      "note": "metro sick Day 5"
+    },
+    {
+      "name": "Merritt",
+      "at": [
+        -103.45,
+        40.43
+      ],
+      "kind": "home",
+      "label_pos": "above",
+      "note": "water Day 0"
+    },
+    {
+      "name": "North Platte",
+      "at": [
+        -100.77,
+        41.13
+      ],
+      "kind": "town",
+      "infected": true,
+      "label_pos": "below",
+      "note": "Day 4"
+    },
+    {
+      "name": "Omaha",
+      "at": [
+        -95.94,
+        41.26
+      ],
+      "kind": "city",
+      "infected": true,
+      "label_pos": "right",
+      "note": "Day 12"
+    },
+    {
+      "name": "Kansas City",
+      "at": [
+        -94.58,
+        39.1
+      ],
+      "kind": "city",
+      "infected": true,
+      "label_pos": "below",
+      "note": "Day 16"
+    },
+    {
+      "name": "St. Louis",
+      "at": [
+        -90.2,
+        38.63
+      ],
+      "kind": "city",
+      "infected": true,
+      "label_pos": "right",
+      "note": "Day 20"
+    },
+    {
+      "name": "Memphis",
+      "at": [
+        -90.05,
+        35.15
+      ],
+      "kind": "city",
+      "infected": true,
+      "label_pos": "right",
+      "note": "Day 25"
+    },
+    {
+      "name": "Baton Rouge",
+      "at": [
+        -91.15,
+        30.45
+      ],
+      "kind": "town",
+      "infected": true,
+      "label_pos": "left",
+      "note": "Day 29"
+    },
+    {
+      "name": "New Orleans",
+      "at": [
+        -90.07,
+        29.95
+      ],
+      "kind": "city",
+      "infected": true,
+      "label_pos": "right",
+      "note": "Day 31"
+    },
+    {
+      "name": "Chicago",
+      "at": [
+        -87.63,
+        41.88
+      ],
+      "kind": "city",
+      "label_pos": "left"
+    },
+    {
+      "name": "Dallas",
+      "at": [
+        -96.8,
+        32.78
+      ],
+      "kind": "city",
+      "label_pos": "below"
+    },
+    {
+      "name": "Minneapolis",
+      "at": [
+        -93.27,
+        44.0
+      ],
+      "kind": "city",
+      "label_pos": "right"
+    }
+  ],
+  "notes": [
+    {
+      "at": [
+        -109.5,
+        35.5
+      ],
+      "text": "Water travels ~35\u201380 miles a day.\nDrinking it: sick in 4\u201310 days.\nA bite: sick in hours.",
+      "size": 13.5
+    },
+    {
+      "at": [
+        -92.4,
+        28.6
+      ],
+      "text": "Salt water kills it.\nThe Gulf is the end of the line.",
+      "red": true,
+      "size": 13.5
+    }
+  ],
+  "legend_corner": "br",
+  "credit": "DOWNSTREAM \u00b7 Reference map"
+}

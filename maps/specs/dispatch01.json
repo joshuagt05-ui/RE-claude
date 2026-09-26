@@ -1,0 +1,399 @@
+{
+  "kicker": "Dispatch I",
+  "title": "Departures",
+  "subtitle": "Day 3 \u00b7 Denver International Airport \u00b7 212,000 passengers a day",
+  "base": "world",
+  "projection": {
+    "type": "natural_earth"
+  },
+  "extent": [
+    -180,
+    -50,
+    180,
+    78
+  ],
+  "size": [
+    1400,
+    760
+  ],
+  "bg_rivers": false,
+  "routes": [
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          8.57,
+          50.03
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          -0.45,
+          51.47
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          140.39,
+          35.77
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          -99.07,
+          19.44
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          -22.62,
+          63.99
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          8.55,
+          47.46
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          2.55,
+          49.01
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          11.79,
+          48.35
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          -79.63,
+          43.68
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          -86.88,
+          21.04
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "points": [
+        [
+          -104.67,
+          39.86
+        ],
+        [
+          -157.92,
+          21.32
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          8.57,
+          50.03
+        ],
+        [
+          55.36,
+          25.25
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          8.57,
+          50.03
+        ],
+        [
+          3.32,
+          6.58
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          -0.45,
+          51.47
+        ],
+        [
+          72.87,
+          19.09
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          140.39,
+          35.77
+        ],
+        [
+          103.99,
+          1.36
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          55.36,
+          25.25
+        ],
+        [
+          31.4,
+          30.12
+        ]
+      ]
+    },
+    {
+      "style": "flight",
+      "status": "red",
+      "points": [
+        [
+          -99.07,
+          19.44
+        ],
+        [
+          -46.47,
+          -23.43
+        ]
+      ]
+    }
+  ],
+  "places": [
+    {
+      "name": "Denver",
+      "at": [
+        -104.67,
+        39.86
+      ],
+      "kind": "city",
+      "infected": true,
+      "label_pos": "left"
+    },
+    {
+      "name": "Frankfurt",
+      "at": [
+        8.57,
+        50.03
+      ],
+      "kind": "airport",
+      "label_pos": "right",
+      "note": "Aunt Carmen"
+    },
+    {
+      "name": "London",
+      "at": [
+        -0.45,
+        51.47
+      ],
+      "kind": "airport",
+      "label_pos": "left"
+    },
+    {
+      "name": "Z\u00fcrich",
+      "at": [
+        8.55,
+        47.46
+      ],
+      "kind": "airport",
+      "label_pos": "below"
+    },
+    {
+      "name": "Reykjav\u00edk",
+      "at": [
+        -22.62,
+        63.99
+      ],
+      "kind": "airport",
+      "label_pos": "above"
+    },
+    {
+      "name": "Tokyo",
+      "at": [
+        140.39,
+        35.77
+      ],
+      "kind": "airport",
+      "label_pos": "right"
+    },
+    {
+      "name": "Mexico City",
+      "at": [
+        -99.07,
+        19.44
+      ],
+      "kind": "airport",
+      "label_pos": "left"
+    },
+    {
+      "name": "Dubai",
+      "at": [
+        55.36,
+        25.25
+      ],
+      "kind": "airport",
+      "label_pos": "right"
+    },
+    {
+      "name": "Lagos",
+      "at": [
+        3.32,
+        6.58
+      ],
+      "kind": "airport",
+      "label_pos": "below"
+    },
+    {
+      "name": "Mumbai",
+      "at": [
+        72.87,
+        19.09
+      ],
+      "kind": "airport",
+      "label_pos": "below"
+    },
+    {
+      "name": "Singapore",
+      "at": [
+        103.99,
+        1.36
+      ],
+      "kind": "airport",
+      "label_pos": "below"
+    },
+    {
+      "name": "Cairo",
+      "at": [
+        31.4,
+        30.12
+      ],
+      "kind": "airport",
+      "label_pos": "left"
+    },
+    {
+      "name": "S\u00e3o Paulo",
+      "at": [
+        -46.47,
+        -23.43
+      ],
+      "kind": "airport",
+      "label_pos": "right"
+    }
+  ],
+  "notes": [
+    {
+      "at": [
+        -172,
+        -2
+      ],
+      "text": "Day 3. Denver has been drinking\nthe Arklay since Day \u22123.\nNobody is sick yet.\nEveryone is flying.",
+      "size": 14
+    },
+    {
+      "at": [
+        62,
+        -32
+      ],
+      "text": "Onward flights, Days 4\u20139:\nthe carriers don't know they're carriers.",
+      "red": true,
+      "size": 14
+    }
+  ],
+  "scale": false,
+  "legend_corner": "bl",
+  "credit": "DOWNSTREAM \u00b7 Dispatch map I",
+  "fit": "contain"
+}
