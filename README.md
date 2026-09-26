@@ -17,6 +17,7 @@ The book follows one family through one year, from the night of the movie to its
 | [`bible/setting.md`](bible/setting.md) | Real and fictional geography, and the route west |
 | [`outline/book-plan.md`](outline/book-plan.md) | **The five parts**, key beats, the twelve Dispatches and the open decisions |
 | [`maps/`](maps/) | The map generator, specs and rendered SVG maps |
+| [`reader/`](reader/build.py) | Builds everything into one book-style page with the maps inline (`pip install markdown`, then `python3 reader/build.py`) |
 
 ## Status
 - [x] Premise and world rules
