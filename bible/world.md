@@ -49,6 +49,7 @@ Each country and region should grow its own slang over the year. The Dispatches 
 
 **2. Drinking contaminated water.**
 - Drinking gives a low dose, which means a **long, silent incubation of 4–10 days** (typically around 6).
+- **The dose sets the clock.** A person drinking tap water gets a small dose. A steer drinking 15 gallons straight from the river gets a big one, and **livestock turn in 2–4 days.** On the plains, the animals get sick first.
 - There are **no symptoms** until the last 12–24 hours. Then comes **the Thirst**: fever, a thirst that can't be satisfied, and confusion. The person collapses, then turns.
 - **A drinker isn't contagious until they turn.** They can hug their kids, go to work and board a plane. **This is how it goes global.** Bites spread it within a town. Water spreads it along a river. Drinkers spread it around the world.
 - Testing: from Month 2, a blood test with a 72-hour turnaround exists. From Month 5 there's a 20-minute field strip. By summer, test strips are a currency and checkpoints are organized around them.

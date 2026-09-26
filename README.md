@@ -16,6 +16,8 @@ The book follows one family through one year, from the night of the movie to its
 | [`bible/characters.md`](bible/characters.md) | The Mercers, Merritt, people on the road, Dispatch narrators |
 | [`bible/setting.md`](bible/setting.md) | Real and fictional geography, and the route west |
 | [`outline/book-plan.md`](outline/book-plan.md) | **The five parts**, key beats, the twelve Dispatches and the open decisions |
+| [`manuscript/`](manuscript/) | **The novel.** Part One, Chapter 1: "Homecoming" |
+| [`art/`](art/render_plates.py) | Illustrated plates drawn in code (`python3 art/render_plates.py`) |
 | [`maps/`](maps/) | The map generator, specs and rendered SVG maps |
 | [`reader/`](reader/build.py) | Builds everything into one book-style page with the maps inline (`pip install markdown`, then `python3 reader/build.py`) |
 
@@ -26,5 +28,6 @@ The book follows one family through one year, from the night of the movie to its
 - [x] Five-part plan and Dispatch schedule
 - [x] Map system, plus Map 1, the Watershed and Dispatch I
 - [ ] Open decisions (see the end of `outline/book-plan.md`)
-- [ ] Chapter-by-chapter outline, Part One
-- [ ] Manuscript
+- [x] Chapter 1: "Homecoming" (about 6,100 words) and Plate 1
+- [ ] Chapter-by-chapter outline for the rest of Part One
+- [ ] Manuscript, Chapters 2 onward

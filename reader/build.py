@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Build the book-style reader page for DOWNSTREAM.
 
-Stitches the bible and outline Markdown into one HTML page, with the maps
-placed inline, so the whole project reads top to bottom like a book.
+Stitches the manuscript, then the bible and outline ("the Notebook"), into
+one HTML page with the maps and illustrated plates inline, so the whole
+project reads top to bottom like a book.
 
     pip install markdown
     python3 reader/build.py [out.html]      # default: reader/downstream.html
@@ -16,6 +17,22 @@ import markdown
 
 ROOT = Path(__file__).resolve().parent.parent
 MAPS = ROOT / "maps" / "out"
+ART = ROOT / "art" / "out"
+
+# The novel: parts, and in each part its chapters. Each chapter opens with its
+# map; plates go directly before the chapter's last scene break unless placed
+# elsewhere.
+NOVEL = [
+    {
+        "id": "part-one", "label": "Part One", "title": "Boil Order",
+        "dates": "Day 0 – Day 31 · September 25 – October 26",
+        "chapters": [
+            {"id": "ch01", "src": "manuscript/part-1/ch01-homecoming.md", "map": "ch01",
+             "map_caption": "Map 1 · Day 0, Friday night. The contamination front reaches the Mercer farm.",
+             "plates": [("before-last-break", "plate01", "Plate 1 · “It wants the river.”")]},
+        ],
+    },
+]
 
 SECTIONS = [
     ("premise", "The Premise", "What happens after the screen goes black.", None),
@@ -39,11 +56,29 @@ FIGURES = [
 ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"]
 
 
-def map_img(map_id, caption):
-    svg = (MAPS / f"{map_id}.svg").read_bytes()
+def map_img(map_id, caption, folder=MAPS, kind="plate"):
+    svg = (folder / f"{map_id}.svg").read_bytes()
     uri = "data:image/svg+xml;base64," + base64.b64encode(svg).decode()
-    return (f'<figure class="plate"><img src="{uri}" alt="{caption}" loading="lazy">'
+    return (f'<figure class="{kind}"><img src="{uri}" alt="{caption}" loading="lazy">'
             f"<figcaption>{caption}</figcaption></figure>")
+
+
+def chapter_html(ch, number):
+    text = (ROOT / ch["src"]).read_text()
+    title = re.search(r"^# Chapter \d+: (.*)$", text, re.M).group(1)
+    dayline = re.search(r"^\*(Day .*)\*$", text, re.M).group(1)
+    body = text.split("\n---\n", 1)[1]
+    html = markdown.markdown(body)
+    html = html.replace("<p>⁂</p>", '<p class="break" aria-label="Scene break">⁂</p>')
+    for where, plate, caption in ch.get("plates", []):
+        fig = map_img(plate, caption, ART, "art")
+        if where == "before-last-break":
+            i = html.rfind('<p class="break"')
+            html = html[:i] + fig + html[i:]
+    opener = (f'<header class="ch-opener"><div class="num">Chapter {number}</div><h3>{title}</h3>'
+              f'<p class="dayline">{dayline}</p></header>')
+    return title, (f'<article class="chapter" id="{ch["id"]}">{opener}'
+                   f'{map_img(ch["map"], ch["map_caption"])}<div class="novel">{html}</div></article>')
 
 
 def md_to_html(text):
@@ -176,6 +211,32 @@ thead tr:has(th:empty:first-child){display:none}
 .plate figcaption{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);padding:10px 4px 2px;line-height:1.5}
 .prose .plate{margin-inline:calc(50% - min(560px,50vw - 20px));max-width:none;width:min(1120px,calc(100vw - 40px))}
 
+/* the novel */
+.part-opener{max-width:40rem;margin:0 auto;padding-block:80px 30px;text-align:center}
+.part-opener .num{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.part-opener h2{font-family:var(--display);font-weight:800;font-size:clamp(56px,13vw,104px);line-height:.9;text-transform:uppercase;margin:10px 0 12px;text-wrap:balance}
+.part-opener p{margin:0;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+.chapter{padding-top:48px}
+.ch-opener{max-width:40rem;margin:0 auto 8px}
+.ch-opener .num{font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.ch-opener h3{font-family:var(--display);font-weight:800;font-size:clamp(40px,8vw,60px);line-height:1;text-transform:uppercase;margin:6px 0 8px}
+.ch-opener .dayline{margin:0;font-family:var(--mono);font-size:13.5px;color:var(--ink-2)}
+.novel{max-width:36rem;margin-inline:auto;font-size:19px;line-height:1.72}
+.novel p{margin:0;text-indent:1.6em}
+.novel > p:first-child,.novel .break + p,.novel figure + p{text-indent:0}
+.novel > p:first-child::first-letter{font-family:var(--display);font-weight:800;float:left;font-size:4.1em;line-height:.8;padding:.08em .08em 0 0;color:var(--red)}
+.novel .break{text-align:center;text-indent:0;margin:1.6em 0;color:var(--ink-3);letter-spacing:.4em}
+.novel strong{font-weight:700}
+.novel p:has(> strong:only-child),.novel p:has(> strong + br){text-indent:0;text-align:center;margin:1em 0;font-family:var(--mono);font-size:15px;line-height:1.5}
+.art{margin:2em auto;padding:0;max-width:min(1120px,100%)}
+.art img{display:block;width:100%;height:auto}
+.art figcaption{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);padding:10px 2px 0;text-align:center}
+.novel .art,.novel .plate{margin-inline:calc(50% - min(560px,50vw - 20px));width:min(1120px,calc(100vw - 40px));max-width:none}
+.notebook-opener{max-width:40rem;margin:120px auto 0;padding-top:36px;border-top:3px double var(--rule);text-align:center}
+.notebook-opener .num{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.notebook-opener h2{font-family:var(--display);font-weight:800;font-size:clamp(48px,11vw,84px);text-transform:uppercase;margin:8px 0 10px;line-height:.95}
+.notebook-opener p{margin:0 auto;max-width:32rem;font-style:italic;color:var(--ink-2)}
+.contents .group{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);padding:18px 0 4px;border-bottom:1px solid var(--rule)}
 .to-top{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));font-family:var(--mono);font-size:12px;
   letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:var(--paper);
   border:1px solid var(--rule);padding:8px 12px;border-radius:3px}
@@ -211,7 +272,20 @@ JS = r"""
 
 def build():
     parts = []
-    toc = []
+    toc = ['<li class="group">The Novel</li>']
+    for part in NOVEL:
+        chapters = []
+        for n, ch in enumerate(part["chapters"], 1):
+            title, html = chapter_html(ch, n)
+            chapters.append(html)
+            toc.append(f'<li><a href="#{ch["id"]}"><span class="n">{n}</span><span class="t">{title}</span>'
+                       f'<span class="d">{part["label"]} · {part["title"]}</span></a></li>')
+        parts.append(f'<section class="part-novel" id="{part["id"]}"><header class="part-opener">'
+                     f'<div class="num">{part["label"]}</div><h2>{part["title"]}</h2><p>{part["dates"]}</p></header>'
+                     f'{"".join(chapters)}</section>')
+    parts.append('<header class="notebook-opener" id="notebook"><div class="num">Back of the book</div>'
+                 '<h2>The Notebook</h2><p>The world rules, people, places, timeline and plan behind the story.</p></header>')
+    toc.append('<li class="group">The Notebook</li>')
     for i, (sid, title, desc, src) in enumerate(SECTIONS):
         body = premise_html() if src is None else md_to_html((ROOT / src).read_text())
         body = place_figures(sid, body)
@@ -235,11 +309,11 @@ def build():
   <h1>Downstream</h1>
   {river}
   <p class="tagline">The missile was on time. The river was faster.</p>
-  <div class="meta">Story bible and plan · Draft 1<br>One family · One year · Day 0 to Day 365</div>
+  <div class="meta">Part One in progress · Chapter 1<br>One family · One year · Day 0 to Day 365</div>
 </header>
 <nav class="contents" id="contents" aria-label="Contents"><h2>Contents</h2><ol>{''.join(toc)}</ol></nav>
 {''.join(parts)}
-<p class="end">End of draft 1 · the manuscript starts here</p>
+<p class="end">End of the notebook · more chapters coming</p>
 <a class="to-top" href="#contents">Contents</a>
 <script>{JS}</script>
 """

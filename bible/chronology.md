@@ -15,7 +15,7 @@ This is the world's timeline. The family's timeline sits inside it (see `book-pl
 |---|---|---|
 | −4 | Mon Sep 21 | ☂ Containment breach in the Arklay lab under Raccoon City General. Contaminated wastewater enters the **Arklay River** through the storm drains, and infected rats get into the sewers. Umbrella security logs it as "a Level 2 incident, contained." |
 | −3 | Tue Sep 22 | ☂ The Arklay Springs plant bottles **Lot 0922**: 1.4M bottles bound for 31 countries. |
-| −2 | Wed Sep 23 | 🇺🇸 The contamination front reaches the South Platte north of Denver. **Aurora's riverbank wells** near Brighton start drawing it in. *(Denver's own mountain water stays clean. It doesn't matter.)* |
+| −2 | Wed Sep 23 | 🇺🇸 The contamination front, a day into the South Platte, passes Kersey. A Kersey rancher's feeder steers drink from the river that morning and are sold at the Brush sale barn that afternoon. **Aurora's riverbank wells** near Brighton start drawing it in. *(Denver's own mountain water stays clean. It doesn't matter.)* |
 | −1 | Thu Sep 24 | 🇺🇸 First missing-persons reports in Raccoon City. Animal Control gets calls about "rabid" dogs. |
 
 ## Part One: Onset (Day 0–30)
